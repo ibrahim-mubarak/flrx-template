@@ -17,7 +17,7 @@ import 'package:redux/redux.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    CommonRegistrar().register(Application.registrar);
+    CommonRegistrar().register(Application.serviceLocator);
     Store<AppState> store = await AppStoreRetriever().retrieveStore();
     // Build our app and trigger a frame.
     await tester.pumpWidget(MaterialApp(

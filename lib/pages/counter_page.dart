@@ -20,7 +20,7 @@ class CounterPage extends StatelessWidget with Page<AppState, CounterPageVM> {
               ),
               Text(
                 vm.counter.toString(),
-                style: Theme.of(context).textTheme.display1,
+                style: Theme.of(context).textTheme.headline4,
               ),
             ],
           ),
@@ -35,5 +35,5 @@ class CounterPage extends StatelessWidget with Page<AppState, CounterPageVM> {
   }
 
   @override
-  initViewModel() => CounterPageVM();
+  CounterPageVM initViewModel() => CounterPageVM();
 }

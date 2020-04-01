@@ -4,6 +4,6 @@ import 'package:flutter/widgets.dart';
 
 /// TODO(ibrahim-mubarak): Need better way of registering Handlers
 Handler homeHandler = Handler(
-    type: HandlerType.function,
+    type: HandlerType.route,
     handlerFunc: (BuildContext context, Map<String, List<String>> params) =>
         CounterPage());

@@ -1,6 +1,6 @@
-import 'package:flrx/components/registrar/service_registrar.dart';
+import 'package:flrx/components/registrar/service_locator.dart';
 
 /// TODO(ibrahim-mubarak): Should be moved to Flrx
 abstract class Registrar {
-  void register(ServiceRegistrar registrar);
+  void register(ServiceLocator registrar);
 }

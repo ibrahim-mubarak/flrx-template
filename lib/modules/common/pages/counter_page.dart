@@ -1,5 +1,5 @@
 import 'package:flrx/pages/page.dart';
-import 'package:flrx_skeleton/pages/viewmodels/counter_page_vm.dart';
+import 'package:flrx_skeleton/modules/common/pages/viewmodels/counter_page_vm.dart';
 import 'package:flrx_skeleton/store/states/app_state.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +22,12 @@ class CounterPage extends StatelessWidget with Page<AppState, CounterPageVM> {
                 vm.counter.toString(),
                 style: Theme.of(context).textTheme.headline4,
               ),
+              RaisedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed("auth/login/1");
+                },
+                child: Text("Go to Login"),
+              )
             ],
           ),
         ),

@@ -67,11 +67,9 @@ packages:
   flrx:
     dependency: "direct main"
     description:
-      path: "."
-      ref: dev
-      resolved-ref: "3b1d6ebba202d351c1769a7b421707a93f3da95e"
-      url: "https://github.com/flrx/framework.git"
-    source: git
+      path: ".."
+      relative: true
+    source: path
     version: "0.0.5"
   flrx_validator:
     dependency: transitive

@@ -20,14 +20,8 @@ class CounterPage extends StatelessWidget with Page<AppState, CounterPageVM> {
               ),
               Text(
                 vm.counter.toString(),
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.display1,
               ),
-              RaisedButton(
-                onPressed: () {
-                  Navigator.of(context).pushNamed("auth/login/1");
-                },
-                child: Text("Go to Login"),
-              )
             ],
           ),
         ),

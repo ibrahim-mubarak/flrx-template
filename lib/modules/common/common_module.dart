@@ -18,7 +18,7 @@ class CommonModule extends Module {
   }
 
   @override
-  void onInit() {
+  Future<void> onInit() async {
     locator.registerSingleton<Logger>(ConsoleLogger());
     locator.registerSingleton<ErrorReporter>(SentryErrorReporter(dsn: "dsn"));
     locator.registerLazySingleton<Localizer>(

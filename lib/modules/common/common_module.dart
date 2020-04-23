@@ -1,6 +1,5 @@
 import 'package:flrx/components/modules/module.dart';
 import 'package:flrx/flrx.dart';
-import 'package:flrx/navigation/widget_route.dart';
 import 'package:flrx_skeleton/modules/common/pages/counter_page.dart';
 
 class CommonModule extends Module {
@@ -11,9 +10,9 @@ class CommonModule extends Module {
   bool get shouldNamespaceRoutes => false;
 
   @override
-  Map<String, WidgetRoute> routes() {
+  Map<String, RouteWidgetBuilder> routes() {
     return {
-      "/": WidgetRoute((args) => CounterPage()), // common/
+      "/": (args) => CounterPage(),
     };
   }
 

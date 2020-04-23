@@ -1,4 +1,3 @@
-import 'package:flrx/store/middlewares/future.dart';
 import 'package:flrx/store/middlewares/redux_logging_middleware.dart';
 import 'package:flrx/store/store_retriever.dart';
 import 'package:flrx_skeleton/store/reducers/app_state_reducer.dart';
@@ -11,7 +10,6 @@ class AppStoreRetriever extends StoreRetriever<AppState> {
   List<Middleware<AppState>> getMiddlewares() {
     return <Middleware<AppState>>[
       thunkMiddleware,
-      futureMiddleware,
       getReduxLoggingMiddleware()
     ];
   }

@@ -5,11 +5,10 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flrx/flrx.dart';
-import 'package:flrx_skeleton/pages/counter_page.dart';
+import 'package:flrx_skeleton/modules/common/common_module.dart';
+import 'package:flrx_skeleton/modules/common/pages/counter_page.dart';
 import 'package:flrx_skeleton/store/states/app_state.dart';
 import 'package:flrx_skeleton/store/store_retriever.dart';
-import 'package:flrx_skeleton/tools/registrar/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -17,7 +16,7 @@ import 'package:redux/redux.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    CommonRegistrar().register(Application.serviceLocator);
+    await CommonModule().initialize();
     Store<AppState> store = await AppStoreRetriever().retrieveStore();
     // Build our app and trigger a frame.
     await tester.pumpWidget(MaterialApp(

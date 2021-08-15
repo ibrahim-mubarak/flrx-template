@@ -1,1 +1,1 @@
-class IncrementAction {}
+class FetchPostsAction {}

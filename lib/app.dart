@@ -8,7 +8,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
 class App extends StatelessWidget {
-  App({this.store});
+  App({required this.store});
 
   final Store<AppState> store;
 

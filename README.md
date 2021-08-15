@@ -1,16 +1,13 @@
 # flrx_skeleton
-
-A new Flutter project.
+Example project that can be used as skeleton for following packages
+- [dev_toolkit](https://github.com/flrx/dev_toolkit)
+- [define_env](https://github.com/ibrahim-mubarak/define-env)  
+- [flrx](https://github.com/flrx/framework)
+- [flrx_validator](https://github.com/flrx/validator)
+- [redux_future_middleware](https://github.com/shbmbhrdwj/redux_future)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Run `flutter pub run build_runner build` to generate files.
+The Application uses dart-defines, to modify the API URL you can pass it as `flutter run --dart-define=API_URL=https://example.com`
+[Read This](https://itnext.io/flutter-1-17-no-more-flavors-no-more-ios-schemas-command-argument-that-solves-everything-8b145ed4285d)

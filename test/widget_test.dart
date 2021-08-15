@@ -6,7 +6,7 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flrx_skeleton/modules/common/common_module.dart';
-import 'package:flrx_skeleton/modules/common/pages/counter_page.dart';
+import 'package:flrx_skeleton/modules/common/pages/posts_page.dart';
 import 'package:flrx_skeleton/store/states/app_state.dart';
 import 'package:flrx_skeleton/store/store_retriever.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: StoreProvider(
         store: store,
-        child: CounterPage(),
+        child: PostPage(),
       ),
     ));
 

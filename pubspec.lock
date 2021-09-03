@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.1"
+  archive:
+    dependency: transitive
+    description:
+      name: archive
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.2"
   args:
     dependency: transitive
     description:
@@ -188,7 +195,7 @@ packages:
     description:
       path: "."
       ref: main
-      resolved-ref: efae73f95d3cd834db24dc197703d1ef8bcb168e
+      resolved-ref: "66c8368f95a4f1bc95934cee953c56f882974eb0"
       url: "https://github.com/flrx/dev_toolkit.git"
     source: git
     version: "0.0.1"
@@ -234,13 +241,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  diff_match_patch:
-    dependency: transitive
-    description:
-      name: diff_match_patch
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.1"
   dio:
     dependency: "direct main"
     description:
@@ -286,11 +286,9 @@ packages:
   flrx:
     dependency: "direct main"
     description:
-      path: "."
-      ref: dev
-      resolved-ref: "1698ac79efe8f0dd6db76c6b674080c2daa59cd4"
-      url: "https://github.com/flrx/framework.git"
-    source: git
+      path: "../flrx"
+      relative: true
+    source: path
     version: "0.0.7"
   flrx_validator:
     dependency: "direct main"
@@ -317,14 +315,14 @@ packages:
       name: flutter_i18n
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.22.4"
-  flutter_json_viewer:
-    dependency: transitive
+    version: "0.30.0"
+  flutter_launcher_icons:
+    dependency: "direct dev"
     description:
-      name: flutter_json_viewer
+      name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "0.9.2"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -337,6 +335,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.0"
+  flutter_native_splash:
+    dependency: "direct dev"
+    description:
+      name: flutter_native_splash
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.1"
   flutter_redux:
     dependency: transitive
     description:
@@ -381,7 +386,7 @@ packages:
       name: frontend_server_client
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.2"
   get_it:
     dependency: transitive
     description:
@@ -424,6 +429,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.0"
+  image:
+    dependency: transitive
+    description:
+      name: image
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.2"
   intl:
     dependency: transitive
     description:
@@ -465,7 +477,7 @@ packages:
       name: logger
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.0"
   logging:
     dependency: transitive
     description:
@@ -501,6 +513,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  multicast_dns:
+    dependency: transitive
+    description:
+      name: multicast_dns
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0+1"
   package_config:
     dependency: transitive
     description:
@@ -514,7 +533,7 @@ packages:
       name: package_info_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.6"
   package_info_plus_linux:
     dependency: transitive
     description:
@@ -542,7 +561,7 @@ packages:
       name: package_info_plus_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.4"
   package_info_plus_windows:
     dependency: transitive
     description:
@@ -585,13 +604,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.0"
-  pretty_diff_text:
-    dependency: transitive
-    description:
-      name: pretty_diff_text
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.0"
   pub_semver:
     dependency: transitive
     description:
@@ -751,6 +763,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  toml:
+    dependency: transitive
+    description:
+      name: toml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.11.0"
   tuple:
     dependency: transitive
     description:
@@ -806,7 +825,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.5"
+    version: "2.2.8"
   xml:
     dependency: transitive
     description:

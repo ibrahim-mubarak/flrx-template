@@ -1,5 +1,0 @@
-define_env:
-  fields:
-    API_URL:
-      type: String
-      default: https://jsonplaceholder.typicode.com/

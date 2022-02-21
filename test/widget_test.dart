@@ -5,27 +5,29 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flrx/flrx.dart';
-import 'package:flrx_skeleton/pages/counter_page.dart';
-import 'package:flrx_skeleton/store/states/app_state.dart';
-import 'package:flrx_skeleton/store/store_retriever.dart';
-import 'package:flrx_skeleton/tools/registrar/common.dart';
+import 'package:flrx_skeleton/config/app_config.dart';
+import 'package:flrx_skeleton/main.dart' as app;
+import 'package:flrx_test/flrx_test.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_redux/flutter_redux.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:redux/redux.dart';
 
 void main() {
+  Future<void> setupApp(WidgetTester tester) async {
+    await TestApplication(
+      app.initAppWidget,
+      tester: tester,
+      config: AppConfig(),
+    ).init();
+  }
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    CommonRegistrar().register(Application.registrar);
-    Store<AppState> store = await AppStoreRetriever().retrieveStore();
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(MaterialApp(
-      home: StoreProvider(
-        store: store,
-        child: CounterPage(),
-      ),
-    ));
+    TestWidgetsFlutterBinding.ensureInitialized();
+    // Setup App
+    await setupApp(tester);
+
+    await tester.pump();
+
+    expectNoErrorWidget();
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
@@ -39,4 +41,13 @@ void main() {
     expect(find.text('0'), findsNothing);
     expect(find.text('1'), findsOneWidget);
   });
+}
+
+/// This should happen automatically.
+/// We shouldn't need to test for this
+void expectNoErrorWidget() {
+  var errorWidget = find.byType(ErrorWidget).evaluate();
+  if (errorWidget.isNotEmpty) {
+    fail(errorWidget.first.widget.toString());
+  }
 }

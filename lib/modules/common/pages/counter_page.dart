@@ -1,34 +1,36 @@
-import 'package:flrx/pages/page.dart';
-import 'package:flrx_skeleton/pages/viewmodels/counter_page_vm.dart';
+import 'package:flrx/flrx.dart';
+import 'package:flrx_skeleton/modules/common/pages/viewmodels/counter_page_vm.dart';
 import 'package:flrx_skeleton/store/states/app_state.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Page;
 
 class CounterPage extends StatelessWidget with Page<AppState, CounterPageVM> {
+  const CounterPage({Key? key}) : super(key: key);
+
   @override
-  Widget buildContent(BuildContext context, CounterPageVM vm) {
+  Widget buildContent(BuildContext context, CounterPageVM viewModel) {
     {
       return Scaffold(
         appBar: AppBar(
-          title: Text('My Home Page'),
+          title: const Text('My Home Page'),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 'You have pushed the button this many times:',
               ),
               Text(
-                vm.counter.toString(),
-                style: Theme.of(context).textTheme.display1,
+                viewModel.counter.toString(),
+                style: Theme.of(context).textTheme.headline6,
               ),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: vm.incrementCounter,
+          onPressed: viewModel.incrementCounter,
           tooltip: 'Increment',
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
       );
     }

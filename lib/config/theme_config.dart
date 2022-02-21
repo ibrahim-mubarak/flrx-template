@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppTheme {
+class ThemeConfig {
   static ThemeData getTheme() {
     return ThemeData(
       // This is the theme of your application.

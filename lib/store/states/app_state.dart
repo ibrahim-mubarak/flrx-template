@@ -1,9 +1,11 @@
+import 'package:flrx_skeleton/modules/common/store/states/counter_state.dart';
+
 class AppState {
-  int _counter = 0;
+  CounterState _counterState = CounterState.initialState();
 
-  int get counter => _counter;
+  CounterState get counterState => _counterState;
 
-  AppState(this._counter);
+  AppState(this._counterState);
 
-  factory AppState.initialState() => AppState(0);
+  factory AppState.initialState() => AppState(CounterState.initialState());
 }

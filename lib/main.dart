@@ -1,26 +1,35 @@
-import 'package:flrx/components/registrar/service_locator.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flrx/components/error_manager/error_manager.dart';
 import 'package:flrx/flrx.dart';
-import 'package:flrx/widgets/flavor_app.dart';
 import 'package:flrx_skeleton/app.dart';
-import 'package:flrx_skeleton/config/flavors.dart';
-import 'package:flrx_skeleton/store/states/app_state.dart';
+import 'package:flrx_skeleton/config/app_config.dart';
 import 'package:flrx_skeleton/store/store_retriever.dart';
-import 'package:flrx_skeleton/tools/registrar/app_router.dart';
-import 'package:flrx_skeleton/tools/registrar/common.dart';
 import 'package:flutter/widgets.dart';
-import 'package:redux/redux.dart';
 
-void main() {
-  FlavorConfig(flavor: AppFlavors.COUNTER_DEV, configList: <Config>[]);
-  Application.init(initApp, (ServiceLocator locator) {
-    [
-      CommonRegistrar(),
-      AppRouterRegistrar(),
-    ].forEach((registrar) => registrar.register(locator));
-  });
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  var app = Application(
+    () async => runApp(await initAppWidget()),
+    appConfig: AppConfig(),
+  );
+
+  Application.serviceLocator.registerSingleton<ErrorManager>(
+    CatcherErrorManager(
+      catcherConfig: CatcherConfig(),
+      navigatorKey: Application.config.navigatorKey,
+    ),
+  );
+
+  app.init();
 }
 
-void initApp() async {
-  Store<AppState> store = await AppStoreRetriever().retrieveStore();
-  runApp(FlavoredApp(child: App(store: store)));
+Future<Widget> initAppWidget() async {
+  await EasyLocalization.ensureInitialized();
+
+  return EasyLocalization(
+    supportedLocales: AppConfig.supportedLocales,
+    path: 'assets/translations',
+    child: App(store: await AppStoreRetriever().retrieveStore()),
+  );
 }

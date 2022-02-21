@@ -1,11 +1,10 @@
-import 'package:flrx_skeleton/store/actions/actions.dart';
+import 'package:flrx_skeleton/modules/common/store/reducers/counter_state_reducer.dart';
 import 'package:flrx_skeleton/store/states/app_state.dart';
 
 class AppStateReducer {
   static AppState reduce(AppState prevState, dynamic action) {
-    if (action is IncrementAction) {
-      return AppState(prevState.counter + 1);
-    }
-    return prevState;
+    var counterState = CounterStateReducer.reduce(prevState.counterState, action);
+
+    return AppState(counterState);
   }
 }

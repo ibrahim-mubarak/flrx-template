@@ -244,16 +244,16 @@ packages:
   flrx:
     dependency: "direct main"
     description:
-      path: "../flrx/packages/framework"
-      relative: true
-    source: path
+      name: flrx
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.9"
   flrx_test:
     dependency: "direct dev"
     description:
-      path: "../flrx/packages/flrx_test"
-      relative: true
-    source: path
+      name: flrx_test
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.1"
   fluro:
     dependency: transitive
